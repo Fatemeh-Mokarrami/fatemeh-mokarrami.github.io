@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Fatemeh Mokarrami — Academic & Clinical Portfolio Design System
+   Deployment-Ready Styles: Glassmorphism, Animations, Print & Responsive
+   ========================================================================== */
+
+:root {
+  --color-primary: #006860;
+  --color-primary-container: #00837a;
+  --color-primary-fixed: #90f4e9;
+  --color-secondary: #2b5cad;
+  --color-secondary-fixed: #d8e2ff;
+  --color-surface: #f7f9fb;
+  --color-surface-container: #eceef0;
+  --color-surface-lowest: #ffffff;
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #3d4947;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glass effect utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 230, 240, 0.8);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(220, 230, 240, 0.6);
+}
+
+/* Ethereal ambient background blurs */
+.ambient-glow-teal {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(144, 244, 233, 0.35) 0%, rgba(247, 249, 251, 0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-blue {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(216, 226, 255, 0.45) 0%, rgba(247, 249, 251, 0) 70%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card hover elevations */
+.academic-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.academic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -8px rgba(43, 92, 173, 0.08), 0 4px 12px -2px rgba(0, 104, 96, 0.06);
+}
+
+/* Telegram Pulse Animation */
+@keyframes telegram-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(36, 131, 226, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(36, 131, 226, 0);
+  }
+}
+.pulse-telegram {
+  animation: telegram-pulse 2s infinite;
+}
+
+/* Material Symbols fix */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+.material-symbols-outlined.fill-1 {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Print Styles for CV & Credentials */
+@media print {
+  header, footer, .no-print, #telegramFloatingBtn, #dossierModal, #telegramOrderModal {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
